@@ -5,9 +5,21 @@ This library allows the micro:bit to control the typical low cost 0,96" OLED dis
 
 You should connect the device’s SCL pin to micro:bit pin 19, and the device’s SDA pin to micro:bit pin 20. You also must connect the device’s ground to the micro:bit ground (pin GND). 
 
-Due to the low memory of the micro:bit, all functions except for show_bitmap, work in zoom mode, so the effective screen resolution is 64x32 dots of 4x4 pixels of size.
-
 Text is rendered using the internal microbit fonts.
+
+## What's new in this fork?
+
+I'm currently modifying this library to work at full 128x64 resolution on the micro:bit V2 which has more memory. There will be no 'zoom' mode.
+
+Currently I've only modified:
+- ssd1306.py
+- ssd1306_bitmap.py
+- ssd1306_px.py
+- ssd1306_text.py
+
+I've not got to the stamp libraries yet, they probably don't work so treat everything below this line with caution. Demos likely don't work either and bitmaps may appear negative.
+
+---------------
 
 The library is distributed in different files to allow importing only the required functions in order to reduce memory consumption.
 
