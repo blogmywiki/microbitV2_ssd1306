@@ -1,5 +1,5 @@
-# Hi-res 128x64 micropython library to control the OLED SSD1306 128x64 I2C with a BBC micro:bit V2
-
+Hi-res 128x64 micropython library to control the OLED SSD1306 128x64 I2C with a BBC micro:bit V2
+################################################################################################
 
 This library allows the micro:bit to control the typical low cost 0,96" OLED display sold in Amazon and eBay connected to the default I2C pins of the micro:bit. Some sort of breakout is required. Note that the Kitronik breakout does not have pre-soldered the I2C pins and you will need to attach some headers to access the I2C pins.
 
@@ -7,7 +7,8 @@ You should connect the device’s SCL pin to micro:bit pin 19, and the device’
 
 Text is rendered using the internal microbit fonts.
 
-## What's new in this fork?
+What's new in this fork?
+++++++++++++++++++++++++
 
 I'm currently modifying this library to work at full 128x64 resolution on the micro:bit V2 which has more memory. There will be no 'zoom' mode.
 
