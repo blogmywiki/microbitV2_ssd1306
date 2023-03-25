@@ -9,7 +9,9 @@ Text is rendered using the internal microbit fonts.
 
 **What's new in this fork?**
 
-I'm currently modifying this library to work at full 128x64 resolution on the micro:bit V2 which has more memory. There will be no 'zoom' mode.
+The parent repo https://github.com/fizban99/microbit_ssd1306 only suppoorts a 64x32 resolution even on a 128x64 OLED due to lack of memory on the BBC micro:bit V1.
+
+I'm currently modifying this library to take advantage of more memory on the micro:bit V2 work at full 128x64 resolution. There will be no 'zoom' mode.
 
 Currently I've only modified:
 
