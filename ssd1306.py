@@ -2,16 +2,16 @@
 # Thanks to adafruit_Python_SSD1306 library by Dmitrii (dmitryelj@gmail.com)
 # Thanks to lopyi2c.py
 # Author: fizban99
-# v0.1 beta
 # Only supports display type I2C128x64
+# Modified by blogmywiki to support full 128x64 resolution on micro:bit V2
 
 from microbit import i2c
 
 # LCD Control constants
 ADDR = 0x3C
-screen = bytearray(513)  # send byte plus pixels
-screen[0] = 0x40
-zoom = 1
+screen = bytearray(1025)  # send byte plus pixels , was 513 then 1025
+screen[0] = 0x40 # changing this to 80 broke clear
+zoom = 0
 
 
 def command(c):
@@ -22,7 +22,7 @@ def initialize():
     cmd = [
         [0xAE],                     # SSD1306_DISPLAYOFF
         [0xA4],                     # SSD1306_DISPLAYALLON_RESUME
-        [0xD5, 0xF0],               # SSD1306_SETDISPLAYCLOCKDIV
+        [0xD5, 0xF0],               # SSD1306_SETDISPLAYCLOCKDIV 
         [0xA8, 0x3F],               # SSD1306_SETMULTIPLEX
         [0xD3, 0x00],               # SSD1306_SETDISPLAYOFFSET
         [0 | 0x0],                  # line #SSD1306_SETSTARTLINE
@@ -38,7 +38,7 @@ def initialize():
         [0xd9, 0xF1],               # SSD1306_SETPRECHARGE
         [0xDB, 0x40],               # SSD1306_SETVCOMDETECT
         [0xA6],                     # SSD1306_NORMALDISPLAY
-        [0xd6, 1],                  # zoom on
+        [0xd6, 0],                  # zoom OFF
         [0xaf]                      # SSD1306_DISPLAYON
     ]
     for c in cmd:
@@ -48,7 +48,9 @@ def initialize():
 def set_pos(col=0, page=0):
     command([0xb0 | page])  # page number
     # take upper and lower value of col * 2
-    c1, c2 = col * 2 & 0x0F, col >> 3
+    c1, c2 = col & 0x0F, col >> 4 # was >> 3
+#    print(c1,c2)
+#    c1, c2 = col * 2 & 0x0F, col >> 3
     command([0x00 | c1])  # lower start column address
     command([0x10 | c2])  # upper start column address
 
@@ -56,7 +58,7 @@ def set_pos(col=0, page=0):
 def clear_oled(c=0):
     global screen
     set_pos()
-    for i in range(1, 513):
+    for i in range(1, 1025): # was 513
         screen[i] = 0
     draw_screen()
 
@@ -70,6 +72,6 @@ def set_zoom(v):
 
 
 def draw_screen():
-    set_zoom(1)
+#    set_zoom(0)
     set_pos()
     i2c.write(ADDR, screen)
