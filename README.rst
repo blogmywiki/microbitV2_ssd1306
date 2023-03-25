@@ -7,8 +7,7 @@ You should connect the device’s SCL pin to micro:bit pin 19, and the device’
 
 Text is rendered using the internal microbit fonts.
 
-What's new in this fork?
-++++++++++++++++++++++++
+**What's new in this fork?**
 
 I'm currently modifying this library to work at full 128x64 resolution on the micro:bit V2 which has more memory. There will be no 'zoom' mode.
 
