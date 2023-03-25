@@ -24,6 +24,8 @@ I've not got to the stamp or effects libraries yet, they probably don't work. Tr
 
 I have uploaded into the samples folder a working hi-res demo HEX file including all libraries - download it and drag and drop it onto the MICROBIT drive or drop it into the micro:bit Python Editor https://python.microbit.org/ to view the files.
 
+I'm using this utiity to prepare bitmaps: http://javl.github.io/image2cpp/ with the settings 128x64 canvas size, white background, code output format plain bytes, draw mode vertical 1 pixel, then download raw binary .bin file and reference that in my Python code.
+
 ---------------
 
 The library is distributed in different files to allow importing only the required functions in order to reduce memory consumption.
