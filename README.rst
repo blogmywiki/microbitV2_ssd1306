@@ -22,6 +22,8 @@ Currently I've only modified:
 
 I've not got to the stamp libraries yet, they probably don't work so treat everything below this line with caution. Demos likely don't work either and bitmaps may appear negative.
 
+I have uploaded into the samples folder a working hi-res demo HEX file including all libraries - download it and drag and drop it onto the MICROBIT drive or drop it into the micro:bit Python Editor https://python.microbit.org/ to view the files.
+
 ---------------
 
 The library is distributed in different files to allow importing only the required functions in order to reduce memory consumption.
