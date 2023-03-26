@@ -1,6 +1,3 @@
-# this is not working - images are stretched twice their
-# expected width with missing vertical stripes on alternate columns
-
 from microbit import i2c
 from ustruct import pack_into
 
@@ -11,7 +8,8 @@ def draw_stamp(x, y, stamp, colour, draw=1):
     ind = (x << 1) + (page << 7) + 1
     if ind > 0:
         for col in range(0, 5):
-            index = ind + (col << 1)
+#           index = ind + (col << 1)
+            index = ind + (col)
             b = (screen[index] | (stamp[col] << shift_page)
                  ) if colour else (screen[index] & ~ (stamp[col] << shift_page))
 #           pack_into(">BB", screen, index, b, b)
