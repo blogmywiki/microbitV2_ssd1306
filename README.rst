@@ -53,14 +53,15 @@ Main features
 Preparation and displaying of a bitmap image
 ============================================
 
+See note at top of page about using online image converter and that you'll get inverted images if you use this message:
+
 1. Create a bitmap with an image editor with only 2 bits per pixel (black and white) 
 2. Use the LCDAssistant (http://en.radzio.dxp.pl/bitmap_converter/) to generate the hex data. 
 3. Copy the hex data into the bitmap_converter.py file in the sample_images folder and run it on a computer with Python.
-4. Flash a completely empty file from mu.
-5. Copy the generated file to the micro:bit using the file transfer function in mu
-6. Create a main.py file, import sdd1306_bitmap and use the function show_bitmap to display the file
-7. Move the files main.py, sdd1306.py and sdd1306_bitmap.py to the micro:bit with the file transfer function in mu
-8. Reset the micro:bit or press CTRL+D in the Repl.
+4. Open the converted bitmap image in the micro:bit Python Editor https://python.microbit.org/
+5. Create a main.py file, import sdd1306_bitmap and use the function show_bitmap to display the file
+6. Move the bitmap, and files main.py, sdd1306.py and sdd1306_bitmap.py to the micro:bit with the 'send to micro:bit' button in the editor
+7. Reset the micro:bit or press CTRL+D in the Repl.
 
    .. image:: https://cdn.rawgit.com/fizban99/microbit_ssd1306/7f60064d/microbit_with_logo.jpg
       :width: 100%
@@ -103,7 +104,7 @@ set_px(x, y, color, draw=1)
 +++++++++++++++++++++++++++++
 
 
-Paints the pixel at position x, y (of a 64x32 coordinate system) with the corresponding color (0 dark or 1 lighted). 
+Paints the pixel at position x, y (where x = 0-127, y = 0-63) with the corresponding color (0 dark or 1 lighted). 
 If the optional parameter **draw** is set to 0 the screen will not be refreshed and **draw_screen()** needs to be called at a later stage, since multiple screen refreshes can be time consuming. This allows setting different pixels in the buffer without refreshing the screen, and finally refresh the display with the content of the buffer.
 
 .. code-block:: python
@@ -137,7 +138,7 @@ Returns the color of the given pixel (0 dark 1 lighted)
 add_text(x, y, text, draw=1)
 ++++++++++++++++++++++++++++++
 
-Prints the text given by **text** at the row x and column y. The screen is divided into 12 columns and 5 rows. If the optional parameter **draw** is set to 0 the screen will not be refreshed and **draw_screen()** needs to be called at a later stage, since multiple screen refreshes can be time consuming. This allows writing different rows in the buffer without refreshing the screen, and finally refresh the display with the content of the buffer.
+Prints the text given by **text** at the row x and column y. The screen is divided into 24 columns and 8 rows. If the optional parameter **draw** is set to 0 the screen will not be refreshed and **draw_screen()** needs to be called at a later stage, since multiple screen refreshes can be time consuming. This allows writing different rows in the buffer without refreshing the screen, and finally refresh the display with the content of the buffer.
 
 .. code-block:: python
 
