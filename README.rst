@@ -18,7 +18,7 @@ Currently I've modified:
 - ssd1306.py
 - ssd1306_bitmap.py
 - ssd1306_px.py
-- ssd1306_text.py
+- ssd1306_text.py (24 columns and 8 rows of text)
 - ssd1306_stamp.py (needs more testing)
 
 In ssd1306_effects.py, pulse and possibly blink seeem to work.
