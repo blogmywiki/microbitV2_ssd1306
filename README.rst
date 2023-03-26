@@ -23,13 +23,13 @@ Currently I've modified:
 
 In ssd1306_effects.py, pulse and possibly blink seeem to work.
 
-Treat everything below this line with extreme caution. Programs in the samples folder might not work either and bitmaps aside from the X-Files one in my own demo may appear negative - not sure whether to fix this or not, as it's quite trivial to produce bitmaps that work.
-
 I have uploaded into the samples folder a working hi-res demo HEX file including all libraries - download it and drag and drop it onto the MICROBIT drive or drop it into the micro:bit Python Editor https://python.microbit.org/ to view the files.
 
 I'm using this utiity to prepare bitmaps: http://javl.github.io/image2cpp/ with the settings 128x64 canvas size, white background, code output format plain bytes, draw mode vertical 1 pixel, then download raw binary .bin file and reference that in my Python code.
 
----------------
+Treat everything below this line with extreme caution. Programs in the samples folder might not work either and bitmaps aside from the X-Files one in my own demo may appear negative - not sure whether to fix this or not, as it's quite trivial to produce bitmaps that work.
+
+-------------------
 
 The library is distributed in different files to allow importing only the required functions in order to reduce memory consumption.
 
