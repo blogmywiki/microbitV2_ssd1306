@@ -13,16 +13,17 @@ The parent repo https://github.com/fizban99/microbit_ssd1306 only suppoorts a 64
 
 I'm currently modifying this library to take advantage of more memory on the micro:bit V2 work at full 128x64 resolution. There will be no 'zoom' mode.
 
-Currently I've only modified:
+Currently I've modified:
 
 - ssd1306.py
 - ssd1306_bitmap.py
 - ssd1306_px.py
 - ssd1306_text.py
+- ssd1306_stamp.py (needs more testing)
 
 In ssd1306_effects.py, pulse and possibly blink seeem to work.
 
-The stamp libraries don't work properly - icons are stretched and stripy. Ideas to fix VERY welcome. Treat everything below this line with extreme caution. Programs in the samples folder likely don't work either and bitmaps may appear negative.
+Treat everything below this line with extreme caution. Programs in the samples folder might not work either and bitmaps aside from the X-Files one in my own demo may appear negative - not sure whether to fix this or not, as it's quite trivial to produce bitmaps that work.
 
 I have uploaded into the samples folder a working hi-res demo HEX file including all libraries - download it and drag and drop it onto the MICROBIT drive or drop it into the micro:bit Python Editor https://python.microbit.org/ to view the files.
 
