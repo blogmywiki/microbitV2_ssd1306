@@ -5,7 +5,7 @@ This library allows the micro:bit to control the typical low cost 0,96" OLED dis
 
 You should connect the device’s SCL pin to micro:bit pin 19, and the device’s SDA pin to micro:bit pin 20. You also must connect the device’s ground to the micro:bit ground (pin GND). 
 
-Text is rendered using the internal microbit fonts.
+Text is rendered using the internal microbit 5x5 fonts to save memory.
 
 **What's new in this fork?**
 
