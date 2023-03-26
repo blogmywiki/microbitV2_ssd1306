@@ -75,3 +75,8 @@ def draw_screen():
 #    set_zoom(0)
     set_pos()
     i2c.write(ADDR, screen)
+    
+
+def invert_screen(v=1):
+    command([0xa6 + v])  # invert display if v=1, restore if v=0
+
