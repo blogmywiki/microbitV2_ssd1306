@@ -22,7 +22,7 @@ Currently I've only modified:
 
 In ssd1306_effects.py, pulse and possibly blink seeem to work.
 
-I've not got to the stamp libraries yet, they probably don't work. Treat everything below this line with extreme caution. Programs in the samples folder likely don't work either and bitmaps may appear negative.
+The stamp libraries don't work properly - icons are stretched and stripy. Ideas to fix VERY welcome. Treat everything below this line with extreme caution. Programs in the samples folder likely don't work either and bitmaps may appear negative.
 
 I have uploaded into the samples folder a working hi-res demo HEX file including all libraries - download it and drag and drop it onto the MICROBIT drive or drop it into the micro:bit Python Editor https://python.microbit.org/ to view the files.
 
